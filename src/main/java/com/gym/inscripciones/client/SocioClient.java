@@ -5,7 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "socios", url = "http://localhost:8080")
+@FeignClient(name = "${FEIGN_URL_SOCIOS:http://localhost:8080}")
 public interface SocioClient {
 
     @GetMapping("/api/socios/buscar/{run}") 
